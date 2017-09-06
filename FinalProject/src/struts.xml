@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+   <package name="helloworld" extends="struts-default">
+     
+     <!-- Bruce -->
+      <action name="database" 
+            class="com.tutorialspoint.struts2.dataBaseTest" 
+            method="execute">
+            <result name="success">/success.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <action name="DataBaseQuery_District_Stats" 
+            class="DataBaseQuery.District_Stats" 
+            method="execute">
+            <result name="success">/District_Stats_Result.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <action name="DataBaseQuery_Author_Title" 
+            class="DataBaseQuery.Author_Title"
+            method="execute">
+            <result name="success">/Author_Title_Result.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <action name="District_least_customer" 
+            class="DataBaseQuery.District_least_customer"
+            method="execute">
+            <result name="success">/District_least_customer_result.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <!-- TOM -->
+      <action name="countCustomers" 
+            class="dataBasePart.countCustomersInDistrict" 
+            method="execute">
+            <result name="success">/countCustomers.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <action name="getPhone" 
+            class="dataBasePart.getCustomerPhoneFromFirstLastName" 
+            method="execute">
+            <result name="success">/showPhone.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+      <action name="getTitle" 
+            class="dataBasePart.filmTitles" 
+            method="execute">
+            <result name="success">/showTitle.jsp</result>
+            <result name="error">/AccessDenied.jsp</result>
+      </action>
+      
+   </package>
+</struts>    
